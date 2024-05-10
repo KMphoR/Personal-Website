@@ -21,5 +21,7 @@ Welcome to my personal website project! This is a platform where I showcase my j
 ## Author
  Keneilwe Mpho Ramatsui (https://github.com/KMphoR) - Aspiring Software Developer Student
 
-## Copyright
+
+
+
 Keneilwe Mpho Ramatsui © 2024
