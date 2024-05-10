@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KM Rams Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d304ef9f80.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div id="header">
+        <div class="container">
+            <nav id="banner">
+                <img src="images/logo.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#about">Skills</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>Hi, my name is <span>Mpho </span><br></h1>
+                <br>
+                <p>An aspiring <span class="auto-type"></span></p>
+            </div>
+        </div>
+    </div>
+
+<!--------------------About-------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                   <img src="images/Portrait.jpeg"> 
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <br>
+                    <p>From my earliest days, curiosity has been my guiding star. I used to be that child who was always disassembling electronics and toys to try to figure out how they worked. Naturally, my insatiable curiosity brought me to the field of computer science. The dynamic aspect of the software engineering sector is what draws me in. In this field, creativity is expected, and education is a lifelong friend. <br><br>Every line of code I write represents a venture into unknown terrain, a chance to work through challenging problems, and a chance to have a significant influence. Setting off on my path to become a software engineer, I'm eager to use cutting-edge technology and my natural curiosity to make a significant impact.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>C#</span><br>Console App & Windows Form</li>
+                            <li><span>JavaScript</span><br>Interactive Web Pages</li>
+                            <li><span>HTML & CSS</span><br>Designing and Syling Web Pages</li>
+                            <li><span>SQL</span><br>Managing Data, Management Systems</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2016 - 2020</span><br>Lyttelton Manor High School</li>
+                            <li><span>2022 - Current</span><br>BComp : Software Engineering</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!----------------Projects-------------------->
+<div id="project">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/search-sorting icon.jpg" >
+                <div class="layer">
+                    <h3>Search & Sort Alogorithms</h3>
+                    <p>C# program that uses an array parameter to perform search and sorting algorithms. The application is menu-driven, allows the user to select their preferred option for sorting and searching</p>
+                    <a href="https://github.com/KMphoR/Search-Sorting_Algorithms"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/password checker icon.webp" >
+                <div class="layer">
+                    <h3>Password Strength Checker</h3>
+                    <p>C# program that evaluates the strength of an employees password based on the following criteria: Length.Contains Uppercase and Lowercase Letters.Contains Numbers.Contains Special Characters.No Spaces</p>
+                    <a href="https://github.com/KMphoR/Code_Off_Day_4-Entelect-Password-Strength-Checker"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/Advanced LogIn-SignUp.jpg" >
+                <div class="layer">
+                    <h3>Advanced LogIn/SignUp Page</h3>
+                    <p>When you enter data, the browser and/or the web server will check to see that the data is in the correct format and within the constraints set by the application.</p>
+                    <a href="https://github.com/KMphoR/Advanced-Form-Validation"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="https://github.com/KMphoR?tab=repositories" class="btn">See more</a>
+    </div>
+</div>
+
+<!----------------Contact-------------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> mkramatsui@icloud.com</p>
+                <p><i class="fa-solid fa-envelope"></i> 577669@student.belgiumcampus.ac.za</p>
+                <p><i class="fa-solid fa-square-phone"></i> 071 107 0038</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/generousity_km/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/Mpho0377"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/keneilwe-mpho-ramatsui/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/KMphoR"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="images/KENEILWE MPHO RAMATSUI_CV().pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="10" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p><i class="fa-solid fa-laptop-code"></i> Keneilwe Mpho Ramatsui <i class="fa-regular fa-copyright"></i> 2024</p>
+    </div>
+</div>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<script>
+    var typed = new Typed(".auto-type", {
+        strings: ["Software Engineer","Software Developer"],
+        typeSpeed: 150,
+        backSpeed: 150,
+        loop: true
+    })
+</script>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link")
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+    
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwPo3ncR6W0Y3kJE6iPWEgA3wLdU1ytylcYOhKGgSLxtcJtm-c7XRdjOkaEp6JtqfXV5w/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },4000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
