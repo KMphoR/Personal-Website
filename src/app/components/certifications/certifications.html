@@ -1,0 +1,24 @@
+<div id="certifications">
+  <div class="container">
+    <h1 class="sub-title">Certifications</h1>
+    <div class="cert-list">
+      @for (cert of certifications; track cert.name) {
+        <a class="cert-card" [href]="cert.link" target="_blank" rel="noopener">
+          <div class="cert-icon">
+            <i [class]="cert.icon"></i>
+          </div>
+          <div class="cert-info">
+            <h3>{{ cert.name }}</h3>
+            <p class="cert-issuer">{{ cert.issuer }}</p>
+            <p class="cert-date">{{ cert.date }}</p>
+            <p class="cert-verify">View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+          </div>
+        </a>
+      }
+
+      @if (certifications.length === 0) {
+        <p class="cert-empty">Certifications coming soon — currently working towards AWS & Microsoft certifications.</p>
+      }
+    </div>
+  </div>
+</div>

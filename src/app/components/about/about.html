@@ -1,0 +1,38 @@
+<div id="about">
+  <div class="container">
+    <div class="row">
+      <div class="about-col-1">
+        <img src="images/Portrait.jpeg" alt="Mpho Ramatsui">
+      </div>
+      <div class="about-col-2">
+        <h1 class="sub-title">About Me</h1>
+        <br>
+        <p>From my earliest days, curiosity has been my guiding star — I was always that child disassembling electronics to figure out how they worked. That same curiosity led me to software engineering, where I recently graduated with a <strong>Bachelor of Computing in Software Engineering (NQF8)</strong> from Belgium Campus, achieving a <strong>Cum Laude</strong> distinction.</p>
+        <br>
+        <p>I'm drawn to the dynamic nature of software development — where creativity is a requirement and learning never stops. Every line of code is a chance to solve a real problem and make a meaningful impact.</p>
+
+        <div class="tab-titles" id="skills">
+          <p class="tab-links" [class.active-link]="activeTab === 'skills'" (click)="setTab('skills')">Skills</p>
+          <p class="tab-links" [class.active-link]="activeTab === 'education'" (click)="setTab('education')">Education</p>
+        </div>
+
+        <div class="tab-contents" [class.active-tab]="activeTab === 'skills'">
+          <ul>
+            <li><span>C#</span><br>Console App & Windows Forms</li>
+            <li><span>JavaScript</span><br>Interactive Web Pages</li>
+            <li><span>HTML & CSS</span><br>Designing and Styling Web Pages</li>
+            <li><span>SQL</span><br>Managing Data & Management Systems</li>
+            <li><span>Angular</span><br>Component-based Web Applications</li>
+          </ul>
+        </div>
+
+        <div class="tab-contents" [class.active-tab]="activeTab === 'education'">
+          <ul>
+            <li><span>2016 – 2020</span><br>Lyttelton Manor High School</li>
+            <li><span>2022 – 2025</span><br>BComp: Software Engineering (NQF8) — <em>Cum Laude</em><br>Belgium Campus ITversity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

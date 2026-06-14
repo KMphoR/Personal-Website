@@ -1,0 +1,20 @@
+<div id="project">
+  <div class="container">
+    <h1 class="sub-title">My Projects</h1>
+    <div class="work-list">
+      @for (project of projects; track project.title) {
+        <div class="work">
+          <img [src]="project.image" [alt]="project.title">
+          <div class="layer">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <a [href]="project.link" target="_blank" rel="noopener">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+    <a href="https://github.com/KMphoR?tab=repositories" target="_blank" class="btn">See more</a>
+  </div>
+</div>

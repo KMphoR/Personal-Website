@@ -1,0 +1,103 @@
+#contact {
+  padding: 50px 0 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contact-left {
+  flex-basis: 35%;
+}
+
+.contact-right {
+  flex-basis: 60%;
+}
+
+.contact-left p {
+  margin-top: 30px;
+  color: #ababab;
+}
+
+.contact-left p i {
+  color: #008cffe7;
+  margin-right: 15px;
+  font-size: 25px;
+}
+
+.social-icons {
+  margin-top: 30px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+  color: #ababab;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+  color: #008cffe7;
+  transform: translateY(-5px);
+}
+
+.contact-right form {
+  width: 100%;
+}
+
+form input, form textarea {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: #262626;
+  padding: 15px;
+  margin: 15px 0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+}
+
+form button[type="submit"] {
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+form button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.msg {
+  color: #61b752;
+  margin-top: 10px;
+  display: block;
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+  background: #262626;
+  font-weight: 300;
+  margin-top: 50px;
+  color: #ababab;
+}
+
+.copyright i {
+  color: #008cffe7;
+}
+
+@media only screen and (max-width: 900px) and (min-width: 601px) {
+  .contact-left, .contact-right { flex-basis: 100%; }
+}
+
+@media only screen and (max-width: 600px) {
+  .contact-left, .contact-right { flex-basis: 100%; }
+  .copyright { font-size: 14px; }
+}
