@@ -9,5 +9,6 @@ import { CommonModule } from '@angular/common';
 })
 export class About {
   activeTab = 'skills';
+  showPuzzle = false;
   setTab(tab: string) { this.activeTab = tab; }
 }

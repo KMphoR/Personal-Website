@@ -20,12 +20,10 @@
           <input type="text" name="Name" placeholder="Your Name" required [(ngModel)]="formData.name">
           <input type="email" name="Email" placeholder="Your Email" required [(ngModel)]="formData.email">
           <textarea name="Message" rows="10" placeholder="Your Message" [(ngModel)]="formData.message"></textarea>
-          <button type="submit" class="btn btn2" [disabled]="sending">
-            {{ sending ? 'Sending...' : 'Submit' }}
-          </button>
+          <button type="submit" class="btn btn2">Submit</button>
         </form>
         @if (successMsg) {
-          <span class="msg">{{ successMsg }}</span>
+          <span class="msg" [class.error]="successMsg.includes('wrong')">{{ successMsg }}</span>
         }
       </div>
     </div>

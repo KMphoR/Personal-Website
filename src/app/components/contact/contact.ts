@@ -19,15 +19,15 @@ export class Contact {
 
   onSubmit(e: Event) {
     e.preventDefault();
-    this.sending = true;
-    const form = e.target as HTMLFormElement;
-    fetch(this.scriptURL, { method: 'POST', body: new FormData(form) })
-      .then(() => {
-        this.successMsg = 'Message sent successfully!';
-        this.formData = { name: '', email: '', message: '' };
-        setTimeout(() => this.successMsg = '', 4000);
-      })
-      .catch(err => console.error('Error:', err))
-      .finally(() => this.sending = false);
+    const payload = new FormData();
+    payload.append('Name', this.formData.name);
+    payload.append('Email', this.formData.email);
+    payload.append('Message', this.formData.message);
+    fetch(this.scriptURL, { method: 'POST', body: payload, mode: 'no-cors' });
+    this.successMsg = 'Message sent successfully!';
+    this.formData.name = '';
+    this.formData.email = '';
+    this.formData.message = '';
+    setTimeout(() => this.successMsg = '', 4000);
   }
 }

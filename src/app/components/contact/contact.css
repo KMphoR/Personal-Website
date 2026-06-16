@@ -74,9 +74,13 @@ form button[disabled] {
 }
 
 .msg {
-  color: #61b752;
   margin-top: 10px;
   display: block;
+  color: #61b752;
+}
+
+.msg.error {
+  color: #e05c5c;
 }
 
 .copyright {

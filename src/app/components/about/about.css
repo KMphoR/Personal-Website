@@ -15,8 +15,12 @@
 
 .about-col-1 img {
   width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: top;
   border-radius: 15px;
   transition: transform 0.5s;
+  display: block;
 }
 
 .about-col-1:hover img {
