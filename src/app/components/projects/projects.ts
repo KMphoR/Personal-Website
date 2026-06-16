@@ -13,7 +13,7 @@ export class Projects {
       title: 'Personal Portfolio Website',
       description: 'My personal portfolio built with Angular — featuring a typing animation, certifications section, project showcase, and a contact form connected to Google Sheets.',
       image: 'images/projectCover.PNG',
-      link: 'https://github.com/KMphoR/Personal-Website'
+      link: 'https://github.com/KMphoR/personal-website-v2'
     },
     {
       title: 'Search & Sort Algorithms',

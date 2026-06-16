@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,6 +11,15 @@ export class Header implements OnInit, OnDestroy {
   menuOpen = false;
   displayedText = '';
   isTyping = true;
+
+  bgImage = this.getBackground();
+
+  private getBackground(): string {
+    return window.innerWidth <= 600 ? 'images/smallBackground2.PNG' : 'images/Background2.jpg';
+  }
+
+  @HostListener('window:resize')
+  onResize() { this.bgImage = this.getBackground(); this.cdr.detectChanges(); }
 
   private words = ['Software Engineer.', 'Software Developer.', 'Full Stack Developer.'];
 
