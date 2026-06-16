@@ -17,10 +17,26 @@
       </div>
       <div class="contact-right">
         <form (submit)="onSubmit($event)">
-          <input type="text" name="Name" placeholder="Your Name" required [(ngModel)]="formData.name">
-          <input type="email" name="Email" placeholder="Your Email" required [(ngModel)]="formData.email">
+          <div class="field-wrap">
+            <input type="text" name="Name" placeholder="Your Name" required [(ngModel)]="formData.name"
+              [class.invalid]="formData.name.length > 0 && formData.name.trim().length < 2"
+              [class.valid]="formData.name.trim().length >= 2">
+            <i class="fa-solid fa-circle-check field-valid-icon" *ngIf="formData.name.trim().length >= 2"></i>
+            <div class="field-error-bubble" *ngIf="formData.name.length > 0 && formData.name.trim().length < 2">
+              <i class="fa-solid fa-circle-xmark"></i> Name is too short
+            </div>
+          </div>
+          <div class="field-wrap">
+            <input type="email" name="Email" placeholder="Your Email" required [(ngModel)]="formData.email"
+              [class.invalid]="formData.email.length > 0 && !isEmailValid()"
+              [class.valid]="formData.email.length > 0 && isEmailValid()">
+            <i class="fa-solid fa-circle-check field-valid-icon" *ngIf="formData.email.length > 0 && isEmailValid()"></i>
+            <div class="field-error-bubble" *ngIf="formData.email.length > 0 && !isEmailValid()">
+              <i class="fa-solid fa-circle-xmark"></i> Hmm, that doesn't look like a valid email
+            </div>
+          </div>
           <textarea name="Message" rows="10" placeholder="Your Message" [(ngModel)]="formData.message"></textarea>
-          <button type="submit" class="btn btn2">Submit</button>
+          <button type="submit" class="btn btn2" [disabled]="!isFormValid()">Submit</button>
         </form>
         @if (successMsg) {
           <span class="msg" [class.error]="successMsg.includes('wrong')">{{ successMsg }}</span>

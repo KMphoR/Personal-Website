@@ -17,6 +17,14 @@ export class Contact {
 
   private scriptURL = 'https://script.google.com/macros/s/AKfycbwPo3ncR6W0Y3kJE6iPWEgA3wLdU1ytylcYOhKGgSLxtcJtm-c7XRdjOkaEp6JtqfXV5w/exec';
 
+  isEmailValid(): boolean {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.formData.email);
+  }
+
+  isFormValid(): boolean {
+    return this.formData.name.trim().length >= 2 && this.isEmailValid();
+  }
+
   onSubmit(e: Event) {
     e.preventDefault();
     const payload = new FormData();

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -12,35 +12,67 @@ export class Header implements OnInit, OnDestroy {
   displayedText = '';
   isTyping = true;
 
-  private words = ['Software Engineer.', 'Software Developer.', 'Problem Solver.'];
+  private words = ['Software Engineer.', 'Software Developer.', 'Full Stack Developer.'];
+
+  techs = [
+    { label: 'HTML',       icon: 'fa-brands fa-html5',      color: '#e34f26' },
+    { label: 'CSS',        icon: 'fa-brands fa-css3-alt',   color: '#1572b6' },
+    { label: 'JavaScript', icon: 'fa-brands fa-js',         color: '#f7df1e' },
+    { label: 'C#',         icon: 'fa-solid fa-code',        color: '#9b4fc8' },
+    { label: 'PostgreSQL', icon: 'fa-solid fa-database',    color: '#336791' },
+    { label: '.NET',       icon: 'fa-solid fa-layer-group', color: '#512bd4' },
+    { label: 'TypeScript', icon: 'fa-brands fa-js',         color: '#3178c6' },
+    { label: 'WebSockets', icon: 'fa-solid fa-plug',        color: '#00b894' },
+    { label: 'Angular',    icon: 'fa-brands fa-angular',    color: '#dd0031' },
+    { label: 'Docker',     icon: 'fa-brands fa-docker',     color: '#2496ed' },
+    { label: 'Postman',    icon: 'fa-solid fa-paper-plane', color: '#ff6c37' },
+  ];
   private wordIndex = 0;
   private charIndex = 0;
   private deleting = false;
-  private timer: any;
+  private intervalId: any;
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   openMenu() { this.menuOpen = true; }
   closeMenu() { this.menuOpen = false; }
 
-  ngOnInit() { this.type(); }
-  ngOnDestroy() { clearTimeout(this.timer); }
+  ngOnInit() {
+    this.intervalId = setInterval(() => this.tick(), 120);
+  }
 
-  private type() {
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+  }
+
+  private tick() {
     const current = this.words[this.wordIndex];
+
     if (!this.deleting) {
-      this.displayedText = current.slice(0, ++this.charIndex);
+      this.charIndex++;
+      this.displayedText = current.slice(0, this.charIndex);
       this.isTyping = true;
+
       if (this.charIndex === current.length) {
         this.isTyping = false;
-        this.timer = setTimeout(() => { this.deleting = true; this.type(); }, 1800);
-        return;
+        clearInterval(this.intervalId);
+        setTimeout(() => {
+          this.deleting = true;
+          this.intervalId = setInterval(() => this.tick(), 80);
+        }, 1800);
       }
     } else {
-      this.displayedText = current.slice(0, --this.charIndex);
+      this.charIndex--;
+      this.displayedText = current.slice(0, this.charIndex);
+
       if (this.charIndex === 0) {
         this.deleting = false;
         this.wordIndex = (this.wordIndex + 1) % this.words.length;
+        clearInterval(this.intervalId);
+        this.intervalId = setInterval(() => this.tick(), 120);
       }
     }
-    this.timer = setTimeout(() => this.type(), this.deleting ? 80 : 120);
+
+    this.cdr.detectChanges();
   }
 }

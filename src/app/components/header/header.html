@@ -17,5 +17,14 @@
       <h1>Hi, my name is <span>Mpho</span></h1>
       <p>A <span class="typed-text">{{ displayedText }}<span class="cursor" [class.blink]="!isTyping">|</span></span></p>
     </div>
+
+    <div class="tech-icons">
+      @for (tech of techs; track tech.label) {
+        <div class="tech-item">
+          <i [class]="tech.icon" [style.color]="tech.color"></i>
+          <span>{{ tech.label }}</span>
+        </div>
+      }
+    </div>
   </div>
 </div>
